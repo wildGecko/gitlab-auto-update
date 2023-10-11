@@ -1,0 +1,16 @@
+[Unit]
+Description=Gitlab Updater
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+
+WorkingDirectory=/opt/gitlab-updater
+ExecStart=/opt/gitlab-updater/gitlab-updater
+SyslogIdentifier=gitlab-updater
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
